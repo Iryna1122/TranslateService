@@ -1,0 +1,60 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1>Translator</h1>
+    <form method="POST" asp-action="TranslateText" id="form1">
+        <label for="input-text">Enter text to translate:</label>
+        <br>
+        <textarea id="input-text" name="inputtext" rows="5" cols="50"></textarea>
+        <br>
+        <label for="from-language">From language:</label>
+        <select id="from-language" name="fromlanguage">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="uk">Ukrainian</option>
+            
+        </select>
+        <br>
+        <label for="to-language">To language:</label>
+        <select id="to-language" name="tolanguage">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="uk">Ukrainian</option>
+        </select>
+        <br>
+        <input type="submit" value="Translate">
+    </form>
+    <textarea rows="5" cols="50">@ViewBag.Text</textarea>
+
+    <hr/>
+
+    <h1>Translator Your Image</h1>
+    <form id="form2" method="POST" asp-action="ImageTranslate">
+        <label for="source-text">Enter url your img:</label> <br>
+        <textarea name="textimage" rows="5" cols="50"></textarea>
+        <br>
+        <select name="fromlanguageimg">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="uk">Ukrainian</option>
+      </select>
+        <select name="tolanguageimg">
+            <option value="en">English</option>
+            <option value="fr">French</option>
+            <option value="es">Spanish</option>
+            <option value="uk">Ukrainian</option>
+      </select>
+        <br>
+        <input type="submit" value="Translate">
+        <br>
+        <label for="complete-text">Translated text:</label> <br>
+        <textarea rows="5" cols="50">@ViewBag.TextImgTranslate</textarea>
+   </form>
+
+
+</div>
